@@ -197,6 +197,27 @@ for data in chatbot.ask("Hello world"):
 
 If you have a cool project you want added to the list, open an issue.
 
+## Crypto Screener
+
+The package includes a simple crypto screener that combines Google Trends data
+with newly listed cryptocurrency coins. It requires the `pytrends` and
+`fuzzywuzzy` libraries in addition to `requests`.
+
+```python
+from crypto_screener import (
+    fetch_trending_searches,
+    fetch_new_coins,
+    match_trends_to_coins,
+)
+
+trends = fetch_trending_searches()
+coins = fetch_new_coins()
+matches = match_trends_to_coins(trends, coins)
+for match in matches:
+    print(match)
+```
+
+
 # Disclaimers
 
 This is not an official OpenAI product. This is a personal project and is not affiliated with OpenAI in any way. Don't sue me.
